@@ -29,12 +29,12 @@ void display() {
 
               glColor3f(1,0,0);
 
-              glVertex3f(-30.0, 0.0, 0.0);
-              glVertex3f(30.0, 0.0, 0.0);
-              glColor3f(1,0,0);
+              //glVertex3f(-30.0, 0.0, 0.0);
+              //glVertex3f(30.0, 0.0, 0.0);
+              //glColor3f(1,0,0);
               
-              glVertex3f(0.0, -30.0 , 0.0);
-              glVertex3f(0.0, 30.0 , 0.0);
+              //glVertex3f(0.0, -30.0 , 0.0);
+              //glVertex3f(0.0, 30.0 , 0.0);
               
               glVertex3f(-1.4, 1.9 , 0.1);
               glVertex3f(3.0, 1.9 , 0.1);
