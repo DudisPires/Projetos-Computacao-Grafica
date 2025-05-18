@@ -11,3 +11,5 @@ e círculos),possuir janelas, uma porta, chaminé e uma janela redonda frontal.A
 projeto é de grande importância para uma maior familiaridade com as funcionalidades do OpenGL. 
 
 ```
+
+![Casinha 2D](Projetos-Computacao-Grafica/Projeto1/casinha-2d.png)
