@@ -12,4 +12,4 @@ projeto é de grande importância para uma maior familiaridade com as funcionali
 
 ```
 
-![Casinha 2D](Projetos-Computacao-Grafica/Projeto1/casinha-2d.png)
+![Casinha 2D](Projeto1/casinha-2d.png)
