@@ -29,7 +29,7 @@ void desenhaTriangulo() {
 //Desenha um círculo de raio 1 centrado na origem
 void desenhaCirculo() {
     glBegin(GL_POLYGON);
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 200; i++) {
             glVertex2f(cos(i), sin(i));
         }
     glEnd();
@@ -145,8 +145,17 @@ void Desenha(void)
     glPopMatrix();
     */
 
-    glTranslatef(100.0f,100.0f,0.0f);
-    
+    glTranslatef(200.0f,100.0f,0.0f);
+
+
+    glPushMatrix();
+      //glScalef(100.0f, 60.0f, 1.0f);
+      glTranslatef(1.0f, -50.0f, 0.0f);
+      glScalef(500.0f, 180.0f, 1.0f);
+      glColor3f(0.196f, 0.804f, 0.196f);      
+      desenhaQuadrado();
+    glPopMatrix();
+
     glPushMatrix();
       glScalef(100.0f, 60.0f, 1.0f);
       glColor3f(1.0f, 1.0f, 1.0f);     //Quad frente
@@ -163,11 +172,128 @@ void Desenha(void)
 
     glPushMatrix();
       glTranslatef(0.0f, 60.0f, 0.0f);
+      glTranslatef(62.0f, 0.0f, 0.0f);
+      glScalef(123.0f, 60.0f, 1.0f);      // Quad telhado
+      glColor3f(1.0f, 1.0f, 1.0f);
+      desenhaQuadrado();
+    glPopMatrix();
+
+    glPushMatrix();
+      glTranslatef(0.0f, 60.0f, 0.0f);
+      glTranslatef(123.0f, 0.0f, 0.0f);
+      glScalef(100.0f, 60.0f, 1.0f);    //tri telhado direita
+      glColor3f(1.0f, 1.0f, 1.0f);
+      desenhaTriangulo();
+    glPopMatrix();
+
+
+    glPushMatrix();
+      glTranslatef(0.0f, 60.0f, 0.0f);
       glScalef(100.0f, 60.0f, 1.0f);    //tri telhado frente
       glColor3f(1.0f, 0.0f, 0.0f);
       desenhaTriangulo();
     glPopMatrix();
+
+    glPushMatrix();
+      glTranslatef(110.0f, 0.0f, 0.0f);
+      glTranslatef(-30.0f , 0.0f, 0.0f);
+      glScalef(30.0f, 40.0f, 1.0f);      // Janela 1 
+      glColor3f(1.0f, 1.0f, 1.0f);
+      desenhaQuadrado();
+    glPopMatrix();
+
   
+    glPushMatrix();
+      glTranslatef(110.0f, 0.0f, 0.0f);
+      glTranslatef(-30.0f , 0.0f, 0.0f);
+      glScalef(25.0f, 35.0f, 1.0f);      // Janela 1.2 
+      glColor3ub(222, 224, 228);
+      desenhaQuadrado();
+    glPopMatrix();
+
+    glPushMatrix();
+      glTranslatef(110.0f, 0.0f, 0.0f);
+      glTranslatef(30.0f , 0.0f, 0.0f);
+      glScalef(30.0f, 40.0f, 1.0f);      // Janela 2 
+      glColor3f(1.0f, 1.0f, 1.0f);
+      desenhaQuadrado();
+    glPopMatrix();
+
+    glPushMatrix();
+      glTranslatef(110.0f, 0.0f, 0.0f);
+      glTranslatef(30.0f , 0.0f, 0.0f);
+      glScalef(25.0f, 35.0f, 1.0f);      // Janela 2.2 
+      glColor3ub(222, 224, 228);
+      desenhaQuadrado();
+    glPopMatrix();
+
+
+    glPushMatrix();
+      glTranslatef(0.0f, -13.8f, 0.0f);
+      glScalef(40.0f, 33.0f, 1.0f);      // Porta  
+      glColor3f(1.0f, 0.0f, 0.0f);
+      desenhaQuadrado();
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslatef(0.0f, -12.5f, 0.0f); 
+        glScalef(3.5f, 35.0f, 1.0f);      // Pilar porta
+        glColor3f(1.0f, 1.0f, 1.0f);
+        desenhaQuadrado();
+    glPopMatrix();
+
+
+    glPushMatrix();
+    glTranslatef(-33.0f, 15.0f, 0.0f);
+      glScalef(15.0f, 15.0f, 1.0f);
+      glColor3f(1.0f, 0.0f, 0.0f);     //Janela frente esquerda
+      desenhaQuadrado();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-33.0f, 15.0f, 0.0f);
+      glScalef(15.0f, 1.0f, 1.0f);
+      glColor3f(1.0f, 1.0f, 1.0f);     //Janela frente esquerda detalhe
+      desenhaQuadrado();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-33.0f, 15.0f, 0.0f);
+      glScalef(1.0f, 15.0f, 1.0f);
+      glColor3f(1.0f, 1.0f, 1.0f);     //Janela frente esquerda detalhe
+      desenhaQuadrado();
+    glPopMatrix();
+
+    glPushMatrix();
+      glTranslatef(33.0f, 15.0f, 0.0f);
+      glScalef(15.0f, 15.0f, 1.0f);
+      glColor3f(1.0f, 0.0f, 0.0f);     //Janela frente direita
+      desenhaQuadrado();
+    glPopMatrix();
+    
+    glPushMatrix();
+      glTranslatef(33.0f, 15.0f, 0.0f);
+      glScalef(15.0f, 1.0f, 1.0f);
+      glColor3f(1.0f, 1.0f, 1.0f);     //Janela frente direita detalhe 
+      desenhaQuadrado();
+    glPopMatrix();
+
+
+    glPushMatrix();
+      glTranslatef(33.0f, 15.0f, 0.0f);
+      glScalef(1.0f, 15.0f, 1.0f);
+      glColor3f(1.0f, 1.0f, 1.0f);     //Janela frente direita detalhe 
+      desenhaQuadrado();
+    glPopMatrix();
+
+
+    glPushMatrix();
+      glTranslatef(-1.5f, 55.0f, 0.0f);
+      glScalef(9.0f, 9.0f, 0.0f);
+      glColor3f(1.0f, 1.0f, 1.0f);       // Circulo telhado 
+      desenhaCirculo();   
+    glPopMatrix();
+
 
     // Executa os comandos OpenGL
     
