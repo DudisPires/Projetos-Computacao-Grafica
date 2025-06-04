@@ -1,6 +1,7 @@
 #include <GL/glut.h>
 #include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
  
 // Largura e altura da janela
 GLfloat windowWidth;
@@ -147,10 +148,17 @@ void Desenha(void)
 
     glTranslatef(200.0f,100.0f,0.0f);
 
+    glPushMatrix();
+      //glScalef(100.0f, 60.0f, 1.0f);
+      glTranslatef(1.0f,  40.0f, 0.0f);  // fundo azul 
+      glScalef(500.0f, 500.0f, 1.0f);
+      glColor3ub(0, 181, 245);      
+      desenhaQuadrado();
+    glPopMatrix();
 
     glPushMatrix();
       //glScalef(100.0f, 60.0f, 1.0f);
-      glTranslatef(1.0f, -50.0f, 0.0f);
+      glTranslatef(1.0f, - 90.0f, 0.0f);  // fundo verde 
       glScalef(500.0f, 180.0f, 1.0f);
       glColor3f(0.196f, 0.804f, 0.196f);      
       desenhaQuadrado();
@@ -293,7 +301,91 @@ void Desenha(void)
       glColor3f(1.0f, 1.0f, 1.0f);       // Circulo telhado 
       desenhaCirculo();   
     glPopMatrix();
+   
+    glPushMatrix();
+      glColor3f(1.0f, 1.0f, 1.0f); 
+      for(int i = 0; i < 6; i++) {
+        glPushMatrix();
+          glTranslatef(25.0f + i * 10.0f, 120.0f, 0.0f);   // Nuvens 
+          glScalef(9.0f, 9.0f, 1.0f);                    
+          desenhaCirculo();
+        glPopMatrix();
+      }
+    glPopMatrix();
 
+
+    glPushMatrix();
+      glTranslatef(-200.0f, 0.0f, 0.0f);
+      glColor3f(1.0f, 1.0f, 1.0f); 
+      for(int i = 0; i < 6; i++) {
+        glPushMatrix();
+          glTranslatef(25.0f + i * 10.0f, 90.0f, 0.0f);   // Nuvens 2
+          glScalef(9.0f, 9.0f, 1.0f);                    
+          desenhaCirculo();
+        glPopMatrix();
+      }
+    glPopMatrix();
+
+    
+    glPushMatrix();
+      glTranslatef(-150.0f, 0.0f, 0.0f);
+      glColor3f(1.0f, 1.0f, 1.0f); 
+      for(int i = 0; i < 6; i++) {
+        glPushMatrix();
+          glTranslatef(25.0f + i * 10.0f, 140.0f, 0.0f);   // Nuvens 3
+          glScalef(9.0f, 9.0f, 1.0f);                    
+          desenhaCirculo();
+        glPopMatrix();
+      }
+    glPopMatrix();
+
+
+
+    glPushMatrix();
+      glTranslatef(-90.0f, 0.0f, 0.0f);
+      glColor3f(1.0f, 1.0f, 1.0f); 
+      for(int i = 0; i < 6; i++) {
+        glPushMatrix();
+          glTranslatef(25.0f + i * 10.0f, 100.0f, 0.0f);   // Nuvens 4
+          glScalef(9.0f, 9.0f, 1.0f);                    
+          desenhaCirculo();
+        glPopMatrix();
+      }
+    glPopMatrix();
+
+
+    glPushMatrix();
+      glTranslatef(140.0f, 0.0f, 0.0f);
+      glColor3f(1.0f, 1.0f, 1.0f); 
+      for(int i = 0; i < 6; i++) {
+        glPushMatrix();
+          glTranslatef(25.0f + i * 10.0f, 110.0f, 0.0f);   // Nuvens 5
+          glScalef(9.0f, 9.0f, 1.0f);                    
+          desenhaCirculo();
+        glPopMatrix();
+      }
+    glPopMatrix();
+    
+    glPushMatrix();
+      glTranslatef(0.0f, -60.0f , 0.0f);
+      glScalef(590.0f, 50.0f, 1.0f);
+      glColor3ub(138, 81, 35);                    //Estrada 
+      desenhaQuadrado();
+    glPopMatrix();
+
+
+    glPushMatrix();
+      glColor3ub(105, 105, 105); 
+      for (float x = -280.0f; x <= 280.0f; x += 25.0f) {
+          for (float y = -75.0f; y <= -35.0f; y += 15.0f) {
+              glPushMatrix();
+                  glTranslatef(x + (rand() % 10 - 5), y + (rand() % 6 - 3), 0.0f);  // Estrada Pedras 
+                  glScalef(2.5f, 2.5f, 1.0f); 
+                  desenhaCirculo();
+              glPopMatrix();
+          }
+      }
+    glPopMatrix();
 
     // Executa os comandos OpenGL
     
