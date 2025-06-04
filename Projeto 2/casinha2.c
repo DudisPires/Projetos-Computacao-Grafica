@@ -77,74 +77,6 @@ void Desenha(void)
     // e as funções de cor:
         // glColor3f
     // Não desenhe nenhuma primitiva utilizando glBegin/glEnd diretamente aqui.
-    /*glTranslatef(100.0f,100.0f,0.0f);
-    glPushMatrix();
-      glColor3f(1.0f,0.0f,0.0f);
-      glScalef(10.0f,10.0f,1.0f);
-      desenhaQuadrado();
-    glPopMatrix();
-    
-    glTranslatef(20.0f, 0.0f,0.0f);
-    glPushMatrix();
-    glColor3f(0.0f,1.0f,0.0f);
-      glScalef(20.0f,20.0f,1.0f);
-      desenhaTriangulo();
-    glPopMatrix();
-    
-    glTranslatef(50.0f, 0.0f, 0.0f);
-    glScalef(20.0f,30.0f,1.0f);
-    glColor3f(0.0f,0.0f,1.0f);
-    desenhaCirculo();*/
-
-    /*
-    
-    glTranslatef(100.0f, 100.0f, 0.0f);
-    glPushMatrix();
-      glScalef(50.0f, 50.0f, 1.0f);
-      glColor3f(0.0f,0.0f,1.0f);
-      desenhaQuadrado();
-    glPopMatrix();  
-      //Porta
-      glPushMatrix();
-        glTranslatef(0.0f, -15.0f, 0.1f);
-        glScalef(10.0f, 20.0f, 1.0f);
-        glColor3f(1.0f,1.0f,1.0f);
-        desenhaQuadrado();
-      glPopMatrix();      
-    //glPopMatrix();
-    
-    glPushMatrix();
-      glTranslatef(0.0f, 55.0f, 0.0f);
-      glRotatef(anguloTri, 0.0f,0.0f,1.0f);
-      glScalef(50.0f, 50.0f, 1.0f);
-      glColor3f(0.0f,1.0f,0.0f);
-      desenhaTriangulo();
-    glPopMatrix();
-    
-    glPushMatrix();
-      glTranslatef(80.0f, 0.0f, 0.0f);
-      glPushMatrix();
-        glScalef(100.0f, 50.0f, 1.0f);
-        glColor3f(1.0f,0.0f,0.0f);
-        desenhaQuadrado();
-      glPopMatrix();
-      //Janela1
-      glPushMatrix();
-        glTranslatef(-25.0f, 0.0f, 0.0f);
-        glScalef(10.0f, 10.0f, 1.0f);
-        glColor3f(1.0f,1.0f,1.0f);
-        desenhaQuadrado();
-      glPopMatrix();
-      //Janela2
-      glPushMatrix();
-        glTranslatef(25.0f, 0.0f, 0.1f);
-        glScalef(10.0f, 10.0f, 1.0f);
-        glColor3f(1.0f,1.0f,1.0f);
-        desenhaQuadrado();
-      glPopMatrix();
-      
-    glPopMatrix();
-    */
 
     glTranslatef(200.0f,100.0f,0.0f);
 
@@ -157,7 +89,6 @@ void Desenha(void)
     glPopMatrix();
 
     glPushMatrix();
-      //glScalef(100.0f, 60.0f, 1.0f);
       glTranslatef(1.0f, - 90.0f, 0.0f);  // fundo verde 
       glScalef(500.0f, 180.0f, 1.0f);
       glColor3f(0.196f, 0.804f, 0.196f);      
@@ -388,11 +319,6 @@ void Desenha(void)
     glPopMatrix();
 
     // Executa os comandos OpenGL
-    
-    //anguloTri+=1.0f;
-    //if (anguloTri >= 360.0f) anguloTri -= 360.0f;
-    
-    //glutPostRedisplay();
     glutSwapBuffers();
 }
 
