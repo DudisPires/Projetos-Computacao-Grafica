@@ -16,14 +16,14 @@ float anguloPernaDir = 0.0f;
 void myKeyboard(unsigned char key, int x, int y)
 {
   switch (key) {
-    case 'r': anguloBracoDir += 5.0f; break;
-    case 'R': anguloBracoDir -= 5.0f; break;
-    case 'l': anguloBracoEsq += 5.0f; break;
-    case 'L': anguloBracoEsq -= 5.0f; break;
-    case 'p': anguloPernaDir += 5.0f; break;
-    case 'P': anguloPernaDir -= 5.0f; break;
-    case 'o': anguloPernaEsq += 5.0f; break;
-    case 'O': anguloPernaEsq -= 5.0f; break;
+    case 'w': anguloBracoDir += 5.0f; break;
+    case 's': anguloBracoDir -= 5.0f; break;
+    case 'd': anguloBracoEsq += 5.0f; break;
+    case 'a': anguloBracoEsq -= 5.0f; break;
+    case 'W': anguloPernaDir += 5.0f; break;
+    case 'S': anguloPernaDir -= 5.0f; break;
+    case 'D': anguloPernaEsq += 5.0f; break;
+    case 'A': anguloPernaEsq -= 5.0f; break;
   }
   glutPostRedisplay();
 }
@@ -117,12 +117,12 @@ void display(void)
 
   // nariz 
   glPushMatrix();
-    glColor3ub(0, 0, 0); // tom amarelado
-    glTranslatef(0.0f, 20.5f, 10.0f); // posição no rosto
+    glColor3ub(0, 0, 0); 
+    glTranslatef(0.0f, 20.5f, 10.0f); 
     glBegin(GL_TRIANGLES);
-      glVertex3f(0.5f, 0.0f, 10.0f);   // ponta do nariz (mais à frente)
-      glVertex3f(-0.9f, -1.0f, 0.0f); // base inferior esquerda
-      glVertex3f(1.7f, -1.0f, 0.0f);  // base inferior direita
+      glVertex3f(0.5f, 0.0f, 10.0f);   
+      glVertex3f(-0.9f, -1.0f, 0.0f); 
+      glVertex3f(1.7f, -1.0f, 0.0f);  
     glEnd();
   glPopMatrix();
 
@@ -274,7 +274,7 @@ void display(void)
     x = x + 0.4;
   }
 
-    //mao esquerda 
+  //mao esquerda 
 
   // dedao
   glPushMatrix();
