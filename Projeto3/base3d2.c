@@ -16,14 +16,64 @@ float anguloPernaDir = 0.0f;
 void myKeyboard(unsigned char key, int x, int y)
 {
   switch (key) {
-    case 'w': anguloBracoDir += 5.0f; break;
-    case 's': anguloBracoDir -= 5.0f; break;
-    case 'd': anguloBracoEsq += 5.0f; break;
-    case 'a': anguloBracoEsq -= 5.0f; break;
-    case 'W': anguloPernaDir += 5.0f; break;
-    case 'S': anguloPernaDir -= 5.0f; break;
-    case 'D': anguloPernaEsq += 5.0f; break;
-    case 'A': anguloPernaEsq -= 5.0f; break;
+    case 'w': anguloBracoDir += 5.0f;
+    if (anguloBracoDir > 90.0){
+      anguloBracoDir = 90.0;
+    }
+    break;
+    case 's': anguloBracoDir -= 5.0f; 
+    if (anguloBracoDir < -90.0){
+      anguloBracoDir = -90.0;
+    }
+    break;
+    case 'd': 
+      anguloBracoEsq += 5.0f; 
+      if (anguloBracoEsq > 0.0){
+        anguloBracoEsq = 0.0;
+      }
+      break;
+    case 'a': 
+      anguloBracoEsq -= 5.0f; 
+      if (anguloBracoEsq < -90.0){
+        anguloBracoEsq = -90.0;
+      }
+    break;
+    case 'W': 
+      anguloPernaDir += 5.0f; 
+      if (anguloPernaDir > 90.0){
+        anguloPernaDir = 90.0;
+      }
+      break;
+
+
+    case 'S': 
+      anguloPernaDir -= 5.0f;
+      if (anguloPernaDir < -90.0){
+        anguloPernaDir = -90.0;
+      }
+      break;
+
+    case 'D': 
+      anguloPernaEsq += 5.0f; 
+      if (anguloPernaEsq > 90.0){
+        anguloPernaEsq = 90.0;
+      }
+      break;
+
+    case 'A': 
+      anguloPernaEsq -= 5.0f; 
+      if (anguloPernaEsq < -90.0){
+        anguloPernaEsq = -90.0;
+      }
+      break;
+
+    case 'K':
+      anguloBracoDir += 5.0f;
+      anguloBracoEsq += 5.0f;
+      anguloPernaDir += 5.0f;
+      anguloPernaEsq += 5.0f;
+      break; 
+
   }
   glutPostRedisplay();
 }
@@ -242,7 +292,7 @@ void display(void)
   // Braço esquerdo
   glPushMatrix();
     glTranslatef(-11.0f, 10.0f, 0.0f);
-    glRotatef(anguloBracoEsq, 1.0f, 0.0f, 0.0f);
+    glRotatef(anguloBracoEsq, 0.0f, 0.0f, 1.0f);
     glTranslatef(0.0f, -4.0f, 0.0f);
     glScalef(0.2f, 1.2f, 0.2f);
     glColor3f(1.0f, 1.0f, 0.0f);
@@ -254,7 +304,7 @@ void display(void)
   // dedao
   glPushMatrix();
     glTranslatef(-11.0f, 10.0f, 0.0f);
-    glRotatef(anguloBracoEsq, 1.0f, 0.0f, 0.0f);
+    glRotatef(anguloBracoEsq, 0.0f, 0.0f, 1.0f);
     glTranslatef(-0.5f, -10.5f, -0.5f);
     glScalef(0.05f, 0.1f, 0.05f);
     glColor3f(1.0f, 0.0f, 0.0f);
@@ -265,7 +315,7 @@ void display(void)
   for(int j = 0 ; j <= 2 ; j++){
     glPushMatrix();
       glTranslatef(-11.0f, 10.0f, 0.0f);
-      glRotatef(anguloBracoEsq, 1.0f, 0.0f, 0.0f);
+      glRotatef(anguloBracoEsq, 0.0f, 0.0f, 1.0f);
       glTranslatef(x , -10.5f, 0.3f);
       glScalef(0.03f, 0.1f, 0.05f);
       glColor3f(1.0f, 0.0f, 0.0f);
@@ -274,30 +324,6 @@ void display(void)
     x = x + 0.4;
   }
 
-  //mao esquerda 
-
-  // dedao
-  glPushMatrix();
-    glTranslatef(-11.0f, 10.0f, 0.0f);
-    glRotatef(anguloBracoEsq, 1.0f, 0.0f, 0.0f);
-    glTranslatef(-0.5f, -10.5f, -0.5f);
-    glScalef(0.05f, 0.1f, 0.05f);
-    glColor3f(1.0f, 0.0f, 0.0f);
-    glutSolidCube(10.0f);
-  glPopMatrix();
-
-  float x1 = -0.5f;
-  for(int j = 0 ; j <= 2 ; j++){
-    glPushMatrix();
-      glTranslatef(-11.0f, 10.0f, 0.0f);
-      glRotatef(anguloBracoEsq, 1.0f, 0.0f, 0.0f);
-      glTranslatef(x1 , -10.5f, 0.3f);
-      glScalef(0.03f, 0.1f, 0.05f);
-      glColor3f(1.0f, 0.0f, 0.0f);
-      glutSolidCube(10.0f);
-    glPopMatrix();
-    x1 = x1 + 0.4;
-  }
 
   //mao dir 
 
@@ -327,7 +353,7 @@ void display(void)
   // detalhe ombro esq
   glPushMatrix();
     glTranslatef(-11.0f, 10.0f, 0.0f);
-    glRotatef(anguloBracoEsq, 1.0f, 0.0f, 0.0f);
+    glRotatef(anguloBracoEsq, 0.0f, 0.0f, 1.0f);
     glTranslatef(0.0f, 2.0f, 0.0f);
     glScalef(0.3f, 0.3f, 0.3f);
     glColor3f(1.0f, 1.0f, 1.0f);
@@ -337,7 +363,7 @@ void display(void)
   // detalhe preto ombro esq
   glPushMatrix();
     glTranslatef(-11.0f, 10.0f, 0.0f);
-    glRotatef(anguloBracoEsq, 1.0f, 0.0f, 0.0f);
+    glRotatef(anguloBracoEsq, 0.0f, 0.0f, 1.0f);
     glTranslatef(0.0f, 0.0f, 0.0f);
     glScalef(0.3f, 0.1f, 0.3f);
     glColor3f(1.0f, 0.0f, 0.0f);
