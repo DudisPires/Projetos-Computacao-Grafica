@@ -11,7 +11,7 @@ CFLAGS = -Wall
 LIBS = -lGL -lGLU -lglut -lm
 
 # Arquivos fonte
-SRC = base3d2.c
+SRC = Bob.c
 
 # Regra padrão
 all: $(TARGET)
