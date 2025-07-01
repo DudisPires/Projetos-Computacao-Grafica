@@ -15,3 +15,10 @@ e círculos),possuir janelas, uma porta, chaminé e uma janela redonda frontal.
 
 
 ![Casinha 2D](Projeto1/casinha-2d.png)
+
+
+# 🏡 Segundo Projeto - Casa 2D
+
+ -   Nova casa 2D seguindo o mesmo formato da primeira mas utilizando as primitivas disponibilizadas pelo Professor.
+
+![Casinha 2D - Versão 2](Projeto2/casa2.png)
