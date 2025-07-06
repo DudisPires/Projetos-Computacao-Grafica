@@ -12,6 +12,10 @@
 #include <cmath>
 
 int win_id;
+float rotX = 0.0f;
+float rotY = 0.0f;
+float rotZ = 0.0f;
+
 
 std::vector<float> vertices;
 std::vector<float> normals;
@@ -115,9 +119,22 @@ void myKeyboard(unsigned char key, int x, int y)
     case 'b':
       glColor3f(0.0f, 0.0f, 1.0f);
       break;
+    case 'x':
+      rotX += 5.0f;
+      break;
+    case 'y':
+      rotY += 5.0f;
+      break;
+    case 'z':
+      rotZ += 5.0f;
+      break;
+    case 27: // ESC
+      glutDestroyWindow(win_id);
+      exit(0);
   }
   glutPostRedisplay();
 }
+
 
 void myKeyboardSpecial(int key, int x, int y ) {
   switch ( key ) {
@@ -176,6 +193,11 @@ void display(void)
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
   gluLookAt(0.0f, 30.0f, 50.0f, 0.0f, 20.0f, 0.0f, 0.0f, 1.0f, 0.0f);
+
+  glRotatef(rotX, 1.0f, 0.0f, 0.0f);
+  glRotatef(rotY, 0.0f, 1.0f, 0.0f);
+  glRotatef(rotZ, 0.0f, 0.0f, 1.0f);
+
 
   drawModel(); 
 
